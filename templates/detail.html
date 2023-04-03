@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation</title>  
+    <link rel="stylesheet" href="{{url_for('static', filename='csss/blog1.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='csss/detail_1.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='csss/animasiya.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='csss/resp.css')}}"> 
+    <link rel="stylesheet" href="{{url_for('static', filename='csss/style.css')}}"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+<body>
+  <div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+    <div class="overlay-content">
+      <form action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit">Search...</button>
+      </form>
+     
+    </div>
+  </div>
+ 
+  <!-- A button to open the popup form -->
+<!-- The form -->
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Subscribe</h1>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+
+    <button type="submit" class="btn" style="background-color: #390c7e;">Login</button>
+    <button type="button" class="btn cancel" style="background-color: black;" onclick="closeForm()" >Close</button>
+ 
+  </form>
+</div>
+ 
+<!-- Navbar     -->
+<div class="main container">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="#"><img style="width: 200px;"  src="" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/newss">Home</a>
+          </li>
+          
+  
+  
+        </ul>
+        <div class="ml-auto">
+          <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
+          <!-- <span onclick="openNav()">open</span> -->
+          <button onclick="openSearch()" class="search-btn" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
+           
+          <button style="border: none;background-color: white;border-radius: 70px;" class="switch"><img src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt=""></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</div>
+<hr style="margin-top: 0;">
+
+
+<div class="main container">
+    <div>
+        <h1 class="title">{{news.title}} </h1>
+    </div>
+
+    <div class="img" style="background-image: url(/static/uploads/{{news.image}});">
+    </div>
+
+    <div>
+        <p class="text">{{news.content}} </p>
+    </div>
+
+
+
+    <div style="margin-top: 100px;" class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>
+            Related news
+          </h1>
+          <div class="row">
+
+            {% for new in next %}
+
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/static/uploads/{{news.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{news.title}} </h5>
+                  <p class="card-text">{{news.content}} </p>
+                  <a href="/news/{{new.id}}/" style="border: none; background-color: #390c7e;" class="btn btn-primary">Read more</a>
+                </div>
+              </div>
+
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<footer class="text-center text-lg-start   text-muted">
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3" style="padding-top: 20px;">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 foter"  >INNOVATION STREAM</h6>
+          <p  class="foter">
+              PASHA Holding's Innovation Stream fosters an innovative culture by promoting both intrapreneurship and entrepreneurship for investment opportunities, market intelligence and hosting events to inspire creativity and forward-thinking across its group of companies and regional ecosystem.            </p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 foter">
+              PRODUCTS
+          </h6>
+          <p  class="foter" >
+              <a href="#!" class="text-reset foter">Summit</a>
+          </p>
+          <p class="foter ">
+            <a href="#!" class="text-reset foter axrinci-yazilar yazilar-anima12">Hackathon</a>
+          </p>
+          <p  class="foter" >
+            <a href="#!" class="text-reset foter">Kickbox</a>
+          </p>
+          <p  class="foter" >
+            <a href="#!" class="text-reset foter">Telegram Channel</a>
+          </p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 foter">Contact</h6>
+          <p class="foter"> <i class="fas fa-home me-3"></i> PASHA Holding" LLC Port Baku 153,  Neftchilyar Avenue, AZ 1010, Baku, Azerbaijan</p>
+          <p class="foter"><i class="fas fa-envelope me-3"></i>
+              office@pasha-holding.az
+          </p>
+          <p class="foter"> <p><i class="fas fa-phone me-3"></i>Phone: (+994 12)505 50 00</p></p>
+          <p><i class="fas fa-print me-3"></i>Fax: (+994 12)505 15 35</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright:
+    <a class="text-reset fw-bold" href="https://pashainnovation.com/">pashainnovation.com</a>
+  </div>
+</footer>
+
+
+
+
+<script src="{{url_for('static', filename='js/navbar.js')}}"></script>
+
+
+<script>
+  let darkMode = localStorage.getItem("darkMode");
+  
+  if (darkMode == "true") {
+    addDarkMode();
+  }
+  document.querySelector(".switch").addEventListener("click", function () {
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode == "true") {
+      removeDarkMode();
+    } else {
+      addDarkMode();
+    }
+  });
+  function addDarkMode() {
+    darkMode = localStorage.setItem("darkMode", "true");
+    document.getElementsByTagName("body")[0].classList.add("darkMode");
+  }
+  function removeDarkMode() {
+    darkMode = localStorage.setItem("darkMode", "false");
+    document.getElementsByTagName("body")[0].classList.remove("darkMode");
+  }
+  </script>
+    
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+</body>
+</html>

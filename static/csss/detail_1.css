@@ -1,0 +1,59 @@
+.title{
+    width: 682px;
+    margin: 0 auto;
+    font-family: inherit;
+    font-size: 55px;
+}
+
+.img{
+    
+    width: 80%;
+    height: 600px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    background-size: cover;
+    margin-top: 80px;
+    margin-bottom: 140px;
+}
+
+.text{
+    width: 890px;
+    text-align: justify;
+    /* margin-top: 50px; */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto
+    
+}
+
+
+.text1{
+   
+    width: 890px;
+    text-align: justify;
+    /* margin-top: 50px; */
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 50px;
+    margin: 0 auto
+    
+   
+}
+
+.card{
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+.card-title{
+    font-size: 19px;
+}
+

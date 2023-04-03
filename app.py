@@ -48,10 +48,16 @@ def addnews():
 def news():
     news = News.query.all()
     news = News.query.order_by(desc(News.id))
-
     next = News.query.order_by(desc(News.id)).first()
-
     return render_template('innovation.html', news=news , next=next)
+
+
+
+@app.route("/newss/<int:id>/")
+def new(id):
+    news = News.query.get(id)
+    next = News.query.order_by(desc(News.id))[:3]
+    return render_template('detail.html', news=news, next=next)
 
  
  
