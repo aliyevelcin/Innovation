@@ -1,0 +1,11 @@
+.box {
+background-color: black !important;
+color: white !important;
+}
+.darkMode {
+background-color: black !important;
+}
+.darkMode > .box {
+background-color: white !important;
+color: black !important;
+}
