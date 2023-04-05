@@ -2,7 +2,11 @@
   background: none;  
   border: none;
 }
+.darkMode .Subscribe-btn{
+  background-color: white ;
+  color: rgb(255, 0, 0);
 
+}
 .Subscribe-btn{
   background-color: #212529;;
   color: white;

@@ -8,6 +8,8 @@ db.init_app(app)
 import os
 from werkzeug.utils import secure_filename 
 
+
+
 UPLOAD_FOLDER ='./static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 from sqlalchemy import desc
@@ -44,22 +46,37 @@ def addnews():
         return render_template('addnews.html')
 
 
-@app.route("/newss")
+@app.route("/", methods = ['GET', 'POST'])
 def news():
-    news = News.query.all()
-    news = News.query.order_by(desc(News.id))
-    next = News.query.order_by(desc(News.id)).first()
-    return render_template('innovation.html', news=news , next=next)
+    if request.method == "GET":
+        news = News.query.order_by(desc(News.id))[1:]
+        next = News.query.order_by(desc(News.id)).first()
+        
+        return render_template('innovation.html', news=news , next=next)
+    else:
+        search = request.form['search']
+        results = News.query.filter((News.title.ilike(f'%{search}%')))
+        return render_template('innovation.html', news=results , search=search)
 
+    
 
-
-@app.route("/newss/<int:id>/")
+@app.route("/newss/<int:id>/", methods = ['GET', 'POST'])
 def new(id):
-    news = News.query.get(id)
-    next = News.query.order_by(desc(News.id))[:3]
-    return render_template('detail.html', news=news, next=next)
+    # news = News.query.get(id)
+    # next = News.query.order_by(desc(News.id))[:3]
+    # return render_template('detail.html', news=news, next=next)
 
- 
+    if request.method == "GET":
+        news = News.query.get(id)
+        next = News.query.order_by(desc(News.id))[:3]
+        return render_template('detail.html', news=news, next=next)
+
+    else:
+        search = request.form['search']
+        results = News.query.filter((News.title.ilike(f'%{search}%')))
+        return render_template('detail.html', news=results , search=search)
+
+    
  
 if __name__ == '__main__':
     with app.app_context():

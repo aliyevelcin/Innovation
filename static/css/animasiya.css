@@ -1,0 +1,68 @@
+.box {
+background-color: black !important;
+color: white !important;
+}
+.darkMode {
+background-color: black !important;
+}
+.darkMode > .box {
+background-color: rgb(255, 255, 255) !important;
+color: black !important;
+}
+
+.darkMode p {
+    color: rgb(255, 255, 255) !important;
+}
+
+.darkMode h6  {
+    color: rgb(255, 255, 255) !important;
+}
+.darkMode h1  {
+    color: rgb(255, 255, 255) !important;
+}
+
+.darkMode a  {
+    color: rgb(255, 255, 255) !important;
+}
+
+.darkMode .img-div1  {
+    border: 2px solid rgb(255, 255, 255)!important;
+}
+.darkMode .img-div2  {
+    border: 2px solid rgb(255, 255, 255)!important;
+}
+
+.darkMode .arama  {
+    color: rgb(255, 0, 0) !important;
+}
+.darkMode .hrr  {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.darkMode .img-3  {
+    display: none;
+}
+.darkMode .img-2  {
+    display: block;
+}
+
+.darkMode .arama  {
+    display: none;
+}
+.darkMode .arama2  {
+    display: block;
+}
+.darkMode .sub  {
+    color: rgb(0, 0, 0) !important;
+}
+
+
+.image {
+    opacity: 1;    
+    transition: .7s ease;
+  }
+  
+  
+.conta:hover .image {
+    opacity: 0.8;
+}
