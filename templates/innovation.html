@@ -38,11 +38,11 @@
 </div>
 
 <!-- Navbar     -->
-<div class="main container">
+<!-- <div class="main container">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/newss"><img style="width: 220px;" class="img-3"  src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
-      <a class="navbar-brand" href="/newss"><img style="width: 200px;display: none;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/newss"><img style="width: 220px;" class="img-3"  src="{{url_for('static', filename='img/lil.png')}}" alt="">  </a>
+      <a class="navbar-brand" href="/newss"><img style="width: 200px;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,9 @@
           <li class="nav-item">
             <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/newss">Home</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/add-news">Add news</a>
+          </li>
   
   
         </ul>
@@ -67,9 +69,43 @@
     </div>
   </nav>
 
+</div> -->
+
+<div class="main container">
+  <nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="/"><img style="width: 200px;"  class="img-3 " src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/"><img style="width: 200px;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/add-news">Add news</a>
+          </li>
+          <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
+        </ul>
+        <div class="ml-auto">
+          <!-- <span onclick="openNav()">open</span> -->
+          <button style="outline: none;" onclick="openSearch()" class="search-btn" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
+            
+        </div>
+        
+        <div>
+          <button style="outline: none; border: none;background-color: white;border-radius: 70px;" class="switch"><img src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
 </div>
-
-
  
     <div class="container-fluid">
         <div class="row" style="padding-left: 100px;padding-right: 100px;">
@@ -161,6 +197,7 @@ document.querySelector(".switch").addEventListener("click", function () {
   darkMode = localStorage.getItem("darkMode");
   if (darkMode == "true") {
     removeDarkMode();
+
   } else {
     addDarkMode();
   }
@@ -173,7 +210,13 @@ function removeDarkMode() {
   darkMode = localStorage.setItem("darkMode", "false");
   document.getElementsByTagName("body")[0].classList.remove("darkMode");
 }
+
+ 
 </script>
+
+
+
+
 
 <!-- darkmode -->
 <script src="{{url_for('static', filename='js/navbar.js')}}"></script>

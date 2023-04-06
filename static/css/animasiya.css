@@ -66,3 +66,21 @@ color: black !important;
 .conta:hover .image {
     opacity: 0.8;
 }
+
+
+/* addnews */
+.input{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.choose_file{
+    margin-bottom: 10px;
+}
+
+
+ 

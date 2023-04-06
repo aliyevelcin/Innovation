@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy() 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///newsssh.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///news.db"
 db.init_app(app)
 import os
 from werkzeug.utils import secure_filename 
@@ -62,10 +62,6 @@ def news():
 
 @app.route("/newss/<int:id>/", methods = ['GET', 'POST'])
 def new(id):
-    # news = News.query.get(id)
-    # next = News.query.order_by(desc(News.id))[:3]
-    # return render_template('detail.html', news=news, next=next)
-
     if request.method == "GET":
         news = News.query.get(id)
         next = News.query.order_by(desc(News.id))[:3]
