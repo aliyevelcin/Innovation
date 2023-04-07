@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/blog1.css')}}"> 
     <link rel="stylesheet" href="{{url_for('static', filename='css/detail_1.css')}}"> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/b2e1054c2a.js" crossorigin="anonymous"></script>
 </head>
 <body style="font-family:'Titillium Web', sans-serif; background-color: white;color: black;">
@@ -37,7 +37,7 @@
   </form>
 </div>
 
- 
+<!-- Navbar     -->
 <div class="main container">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
@@ -78,6 +78,10 @@
 
 </div>
  
+
+ 
+
+ 
     <div class="container-fluid">
         <div class="row" style="padding-left: 100px;padding-right: 100px;">
           {% if next %}
@@ -88,7 +92,7 @@
                             <span >Local</span>
                             <span> • </span>
                             <span>Mart 27, 2023</span>
-                            <h1 style="font-size: 2.9rem;width: 90%;" class="sekil1-text">{{next.title}}</h1>
+                            <h1 style="font-size: 2.9rem;width: ;" class="sekil1-text">{{next.title}}</h1>
                         </div>
                     </div>
                 </a>
