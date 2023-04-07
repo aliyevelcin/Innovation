@@ -37,46 +37,13 @@
   </form>
 </div>
 
-<!-- Navbar     -->
-<!-- <div class="main container">
-  <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/newss"><img style="width: 220px;" class="img-3"  src="{{url_for('static', filename='img/lil.png')}}" alt="">  </a>
-      <a class="navbar-brand" href="/newss"><img style="width: 200px;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown" style="display: flex;justify-content: space-around;">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/newss">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/add-news">Add news</a>
-          </li>
-  
-  
-        </ul>
-        <div class="ml-auto">
-          <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
-           <button   onclick="openSearch()"  class="search-btn " ><img class="arama" src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
-           <button   onclick="openSearch()" class="search-btn " ><img class="arama2" src="{{url_for('static', filename='img/white.png')}}" width="20" alt=""></button>
-
-          <button style="border: none;background-color: white;border-radius: 70px;" class="switch"><img src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt=""></button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-</div> -->
-
+ 
 <div class="main container">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
       
-      <a class="navbar-brand" href="/"><img style="width: 200px;"  class="img-3 " src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
-      <a class="navbar-brand" href="/"><img style="width: 200px;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/"><img style="width: 220px;"  class="img-1 "  src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/"><img style="width: 220px;" class="img-2"    src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -92,13 +59,17 @@
           <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
         </ul>
         <div class="ml-auto">
-          <!-- <span onclick="openNav()">open</span> -->
-          <button style="outline: none;" onclick="openSearch()" class="search-btn" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
+           
+          <button style="outline: none;" onclick="openSearch()" class="search-btn axtarma-1" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
+          <button style="outline: none;" onclick="openSearch()" class="search-btn axtarma-2" ><img src="{{url_for('static', filename='img/white.png')}}" width="20" alt=""></button>
             
         </div>
         
         <div>
-          <button style="outline: none; border: none;background-color: white;border-radius: 70px;" class="switch"><img src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt="">
+          <button style="outline: none; border: none;background-color: white;border-radius: 70px;" class="switch">
+            <img class="dark-1"    src="{{url_for('static', filename='img/suun.png')}}" width="40px" alt="">
+            <img class="dark-2" src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt="">
+            
           </button>
         </div>
       </div>
@@ -117,7 +88,7 @@
                             <span >Local</span>
                             <span> • </span>
                             <span>Mart 27, 2023</span>
-                            <h1 style="font-size: 2.9rem;" class="sekil1-text">{{next.title}}</h1>
+                            <h1 style="font-size: 2.9rem;width: 90%;" class="sekil1-text">{{next.title}}</h1>
                         </div>
                     </div>
                 </a>
@@ -210,7 +181,7 @@ function removeDarkMode() {
   darkMode = localStorage.setItem("darkMode", "false");
   document.getElementsByTagName("body")[0].classList.remove("darkMode");
 }
-
+ 
  
 </script>
 

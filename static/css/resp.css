@@ -6,4 +6,24 @@
     .img-div2 {
         padding:15px !important
     }
+    .text{
+        width: 100%;
+    }
+    .title{
+        width: 100%;
+    }
+    .img{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+     
+    .text{
+        width: 100%;
+    }
+    .title{
+        width: 100%;
+    }
+    
 }

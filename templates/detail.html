@@ -38,12 +38,14 @@
 </div>
  
 <!-- Navbar     -->
+ 
 <div class="main container">
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid">
       
-      <a class="navbar-brand" href="/"><img style="width: 220px;" class="img-3"  src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
-      <a class="navbar-brand" href="/"><img style="width: 200px;" class="img-2"  src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/"><img style="width: 220px;"  class="img-1 "  src="{{url_for('static', filename='img/lil.png')}}" alt=""></a>
+      <a class="navbar-brand" href="/"><img style="width: 220px;" class="img-2"    src="{{url_for('static', filename='img/img-3.png')}}" alt=""></a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,16 +54,24 @@
           <li class="nav-item">
             <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/">Home</a>
           </li>
-          
-  
-  
+          <li class="nav-item">
+            <a class="nav-link active" style="font-family: sans-serif;" aria-current="page" href="/add-news">Add news</a>
+          </li>
+          <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
         </ul>
         <div class="ml-auto">
-          <button class="Subscribe-btn" onclick="openForm()">Subscribe</button>
-          <!-- <span onclick="openNav()">open</span> -->
-          <button onclick="openSearch()" class="search-btn" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
            
-          <button style="border: none;background-color: white;border-radius: 70px;" class="switch"><img src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt=""></button>
+          <button style="outline: none;" onclick="openSearch()" class="search-btn axtarma-1" ><img src="{{url_for('static', filename='img/search.png')}}" width="20" alt=""></button>
+          <button style="outline: none;" onclick="openSearch()" class="search-btn axtarma-2" ><img src="{{url_for('static', filename='img/white.png')}}" width="20" alt=""></button>
+            
+        </div>
+        
+        <div>
+          <button style="outline: none; border: none;background-color: white;border-radius: 70px;" class="switch">
+            <img class="dark-1"    src="{{url_for('static', filename='img/suun.png')}}" width="40px" alt="">
+            <img class="dark-2" src="{{url_for('static', filename='img/dark.png')}}" width="20px" alt="">
+            
+          </button>
         </div>
       </div>
     </div>
@@ -80,7 +90,7 @@
     </div>
 
     <div>
-        <p class="text">{{news.content}} </p>
+        <p  class="text">{{news.content}} </p>
     </div>
 
 

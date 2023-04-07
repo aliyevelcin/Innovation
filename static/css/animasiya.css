@@ -39,19 +39,36 @@ color: black !important;
     background-color: rgb(255, 255, 255) !important;
 }
 
-.darkMode .img-3  {
+.darkMode .img-1  {
     display: none;
 }
 .darkMode .img-2  {
     display: block;
 }
-
-.darkMode .arama  {
+.img-2{
     display: none;
 }
-.darkMode .arama2  {
+
+.darkMode .axtarma-1  {
+    display: none;
+}
+.darkMode .axtarma-2  {
     display: block;
 }
+.axtarma-2{
+    display: none;
+}
+
+.darkMode .dark-1  {
+    display: none;
+}
+.darkMode .dark-2  {
+    display: block;
+}
+.dark-2{
+    display: none;
+}
+
 .darkMode .sub  {
     color: rgb(0, 0, 0) !important;
 }
